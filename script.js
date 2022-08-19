@@ -48,26 +48,56 @@ function playRound(playerSelection, computerSelection) {
   playerSelection = firstChar.toUpperCase() + restOfString;
 
   if (playerSelection === "Rock" && computerSelection === "Scissors") {
-    return "You Win! Rock beats Scissors";
+    playerCount++;
+    console.log(playerCount);
+    return console.log("You Win! Rock beats Scissors");
   } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-    return "You Win! Paper beats Rock";
+    playerCount++;
+    console.log(playerCount);
+    return console.log("You Win! Paper beats Rock");
   } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-    return "You Win! Scissors beats Paper";
+    playerCount++;
+    console.log(playerCount);
+    return console.log("You Win! Scissors beats Paper");
   } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-    return "You Lose! Rock beats Scissors";
+    computerCount++;
+    console.log(computerCount);
+    return console.log("You Lose! Rock beats Scissors");
   } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-    return "You Lose! Paper beats Rock";
+    computerCount++;
+    console.log(computerCount);
+    return console.log("You Lose! Paper beats Rock");
   } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-    return "You Lose! Scissors beats Paper";
+    computerCount++;
+    console.log(computerCount);
+    return console.log("You Lose! Scissors beats Paper");
   } else if (playerSelection === "Rock" && computerSelection === "Rock") {
-    return "It's a Tie!";
+    return console.log("It's a Tie!");
   } else if (playerSelection === "Paper" && computerSelection === "Paper") {
-    return "It's a Tie!";
+    return console.log("It's a Tie!");
   } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-    return "It's a Tie!";
+    return console.log("It's a Tie!");
   }
 }
 
-const playerSelection = "Rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+// Write a function called game and call playRound function inside of game function
+// Use prompt to get the input from the user
+// Make it so you can play 5 rounds of the game
+// Use a for loop to call the game function 5 times
+// Keep score of who wins and loses each game
+// Return a string message at the end of each round that announces the winner of the round
+// At the end of the 5 games announce the ultimate winner of the whole 5 rounds
+
+let playerCount = 0;
+let computerCount = 0;
+
+function game() {
+  let playerSelection = prompt("Rock, Paper, Scissors?");
+  let computerSelection = getComputerChoice();
+
+  playRound(playerSelection, computerSelection);
+}
+
+for (let i = 0; i < 5; i++) {
+  game();
+}
