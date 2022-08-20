@@ -87,6 +87,9 @@ function playRound(playerSelection, computerSelection) {
 // Keep score of who wins and loses each game
 // Return a string message at the end of each round that announces the winner of the round
 // At the end of the 5 games announce the ultimate winner of the whole 5 rounds
+// If playerCount is greater than computerCount, then console.log "You are the winner!"
+// If computerCount is greater than playerCount, then console.log "You lose! The computer beat you"
+// Else console.log "Nobody Wins! It's a Tie!"
 
 let playerCount = 0;
 let computerCount = 0;
@@ -100,4 +103,12 @@ function game() {
 
 for (let i = 0; i < 5; i++) {
   game();
+}
+
+if (playerCount > computerCount) {
+  console.log("You are the Winner!");
+} else if (computerCount > playerCount) {
+  console.log("You Lose! The Computer beat you");
+} else {
+  console.log("Nobody Wins! It's a Tie!");
 }
