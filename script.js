@@ -18,13 +18,9 @@ function getComputerChoice() {
 }
 
 // Write a function with two parameters
-
 // Make playerSelection parameter case-insensitive
-
 // Make playerSelection to lowerCase
-
 // Make playerSelection first character upperCase
-
 // Combine upperCase character and rest of lowerCase string
 
 // Rock beats Scissors
@@ -75,7 +71,10 @@ function playRound(playerSelection, computerSelection) {
     return console.log("It's a Tie!");
   } else if (playerSelection === "Paper" && computerSelection === "Paper") {
     return console.log("It's a Tie!");
-  } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+  } else if (
+    playerSelection === "Scissors" &&
+    computerSelection === "Scissors"
+  ) {
     return console.log("It's a Tie!");
   }
 }
