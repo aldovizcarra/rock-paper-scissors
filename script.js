@@ -9,19 +9,13 @@ function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3) + 1;
 
   if (randomNumber === 1) {
-    return "Rock";
+    return 'Rock';
   } else if (randomNumber === 2) {
-    return "Paper";
+    return 'Paper';
   } else if (randomNumber === 3) {
-    return "Scissors";
+    return 'Scissors';
   }
 }
-
-// Write a function with two parameters
-// Make playerSelection parameter case-insensitive
-// Make playerSelection to lowerCase
-// Make playerSelection first character upperCase
-// Combine upperCase character and rest of lowerCase string
 
 // Rock beats Scissors
 // Rock loses to Paper
@@ -37,43 +31,41 @@ function getComputerChoice() {
 
 // Return a string that declares the winner of the round "You Lose!, Paper beats Rock"
 
-function playRound(playerSelection, computerSelection) {
-  let lowerCaseString = playerSelection.toLowerCase();
-  let firstChar = lowerCaseString.slice(0, 1);
-  let restOfString = lowerCaseString.slice(1);
-  playerSelection = firstChar.toUpperCase() + restOfString;
+function playRound(e) {
+  const playerSelection = e.target.id;
+  const computerSelection = getComputerChoice();
 
-  if (playerSelection === "Rock" && computerSelection === "Scissors") {
+  if (playerSelection === 'rock' && computerSelection === 'Scissors') {
     playerCount++;
     console.log(playerCount);
-    return console.log("You Win! Rock beats Scissors");
-  } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+    return console.log('You Win! Rock beats Scissors');
+  } else if (playerSelection === 'paper' && computerSelection === 'Rock') {
     playerCount++;
     console.log(playerCount);
-    return console.log("You Win! Paper beats Rock");
-  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+    return console.log('You Win! Paper beats Rock');
+  } else if (playerSelection === 'scissors' && computerSelection === 'Paper') {
     playerCount++;
     console.log(playerCount);
-    return console.log("You Win! Scissors beats Paper");
-  } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+    return console.log('You Win! Scissors beats Paper');
+  } else if (playerSelection === 'scissors' && computerSelection === 'Rock') {
     computerCount++;
     console.log(computerCount);
-    return console.log("You Lose! Rock beats Scissors");
-  } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+    return console.log('You Lose! Rock beats Scissors');
+  } else if (playerSelection === 'rock' && computerSelection === 'Paper') {
     computerCount++;
     console.log(computerCount);
-    return console.log("You Lose! Paper beats Rock");
-  } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+    return console.log('You Lose! Paper beats Rock');
+  } else if (playerSelection === 'paper' && computerSelection === 'Scissors') {
     computerCount++;
     console.log(computerCount);
-    return console.log("You Lose! Scissors beats Paper");
-  } else if (playerSelection === "Rock" && computerSelection === "Rock") {
+    return console.log('You Lose! Scissors beats Paper');
+  } else if (playerSelection === 'rock' && computerSelection === 'Rock') {
     return console.log("It's a Tie!");
-  } else if (playerSelection === "Paper" && computerSelection === "Paper") {
+  } else if (playerSelection === 'paper' && computerSelection === 'Paper') {
     return console.log("It's a Tie!");
   } else if (
-    playerSelection === "Scissors" &&
-    computerSelection === "Scissors"
+    playerSelection === 'scissors' &&
+    computerSelection === 'Scissors'
   ) {
     return console.log("It's a Tie!");
   }
@@ -93,21 +85,13 @@ function playRound(playerSelection, computerSelection) {
 let playerCount = 0;
 let computerCount = 0;
 
-function game() {
-  let playerSelection = prompt("Rock, Paper, Scissors?");
-  let computerSelection = getComputerChoice();
-
-  playRound(playerSelection, computerSelection);
-}
-
-for (let i = 0; i < 5; i++) {
-  game();
-}
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => button.addEventListener('click', playRound));
 
 if (playerCount > computerCount) {
-  console.log("You are the Winner!");
+  console.log('You are the Winner!');
 } else if (computerCount > playerCount) {
-  console.log("You Lose! The Computer beat you");
+  console.log('You Lose! The Computer beat you');
 } else {
   console.log("Nobody Wins! It's a Tie!");
 }
