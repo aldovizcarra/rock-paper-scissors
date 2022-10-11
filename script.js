@@ -32,39 +32,39 @@ function getComputerChoice() {
 // Return a string that declares the winner of the round "You Lose!, Paper beats Rock"
 
 function playRound(e) {
-  const playerSelection = e.target.id;
+  const playerSelection = e.target.textContent;
   const computerSelection = getComputerChoice();
 
-  if (playerSelection === 'rock' && computerSelection === 'Scissors') {
+  if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
     playerCount++;
     console.log(playerCount);
     return console.log('You Win! Rock beats Scissors');
-  } else if (playerSelection === 'paper' && computerSelection === 'Rock') {
+  } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
     playerCount++;
     console.log(playerCount);
     return console.log('You Win! Paper beats Rock');
-  } else if (playerSelection === 'scissors' && computerSelection === 'Paper') {
+  } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
     playerCount++;
     console.log(playerCount);
     return console.log('You Win! Scissors beats Paper');
-  } else if (playerSelection === 'scissors' && computerSelection === 'Rock') {
+  } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
     computerCount++;
     console.log(computerCount);
     return console.log('You Lose! Rock beats Scissors');
-  } else if (playerSelection === 'rock' && computerSelection === 'Paper') {
+  } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
     computerCount++;
     console.log(computerCount);
     return console.log('You Lose! Paper beats Rock');
-  } else if (playerSelection === 'paper' && computerSelection === 'Scissors') {
+  } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
     computerCount++;
     console.log(computerCount);
     return console.log('You Lose! Scissors beats Paper');
-  } else if (playerSelection === 'rock' && computerSelection === 'Rock') {
+  } else if (playerSelection === 'Rock' && computerSelection === 'Rock') {
     return console.log("It's a Tie!");
-  } else if (playerSelection === 'paper' && computerSelection === 'Paper') {
+  } else if (playerSelection === 'Paper' && computerSelection === 'Paper') {
     return console.log("It's a Tie!");
   } else if (
-    playerSelection === 'scissors' &&
+    playerSelection === 'Scissors' &&
     computerSelection === 'Scissors'
   ) {
     return console.log("It's a Tie!");
