@@ -34,39 +34,82 @@ function getComputerChoice() {
 function playRound(e) {
   const playerSelection = e.target.textContent;
   const computerSelection = getComputerChoice();
+  const results = document.querySelector('.results');
+  const para = document.createElement('p');
+  para.classList.add('score');
+  const score = document.querySelector('.score');
 
   if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
     playerCount++;
-    console.log(playerCount);
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log('You Win! Rock beats Scissors');
   } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
     playerCount++;
-    console.log(playerCount);
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log('You Win! Paper beats Rock');
   } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
     playerCount++;
-    console.log(playerCount);
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log('You Win! Scissors beats Paper');
   } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
     computerCount++;
-    console.log(computerCount);
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log('You Lose! Rock beats Scissors');
   } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
     computerCount++;
-    console.log(computerCount);
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log('You Lose! Paper beats Rock');
   } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
     computerCount++;
-    console.log(computerCount);
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log('You Lose! Scissors beats Paper');
   } else if (playerSelection === 'Rock' && computerSelection === 'Rock') {
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log("It's a Tie!");
   } else if (playerSelection === 'Paper' && computerSelection === 'Paper') {
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log("It's a Tie!");
   } else if (
     playerSelection === 'Scissors' &&
     computerSelection === 'Scissors'
   ) {
+    if (score) {
+      score.parentNode.removeChild(score);
+    }
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    results.appendChild(para);
     return console.log("It's a Tie!");
   }
 }
@@ -92,6 +135,4 @@ if (playerCount > computerCount) {
   console.log('You are the Winner!');
 } else if (computerCount > playerCount) {
   console.log('You Lose! The Computer beat you');
-} else {
-  console.log("Nobody Wins! It's a Tie!");
 }
