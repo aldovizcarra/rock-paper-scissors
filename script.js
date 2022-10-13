@@ -26,7 +26,11 @@ function playRound(e) {
   para2.classList.add('message-results');
   const messageResults = document.querySelector('.message-results');
 
-  if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+  if (
+    (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
+    (playerSelection === 'Paper' && computerSelection === 'Rock') ||
+    (playerSelection === 'Scissors' && computerSelection === 'Paper')
+  ) {
     playerCount++;
     if (score || messageResults) {
       if (score && messageResults) {
@@ -53,190 +57,47 @@ function playRound(e) {
     }
 
     para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `You Win! Rock beats Scissors`;
-    results.appendChild(para);
-    results.appendChild(para2);
-  } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-    playerCount++;
-    if (score || messageResults) {
-      if (score && messageResults) {
-        score.parentNode.removeChild(score);
-        messageResults.parentNode.removeChild(messageResults);
-        if (playerCount === 5) {
-          para2.textContent = `You are the Winner!`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        } else if (computerCount === 5) {
-          para2.textContent = `You Lose! The Computer beat you`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        }
-      } else if (messageResults) {
-        messageResults.parentNode.removeChild(messageResults);
-      }
-    }
-
-    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `You Win! Paper beats Rock`;
-    results.appendChild(para);
-    results.appendChild(para2);
-  } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-    playerCount++;
-    if (score || messageResults) {
-      if (score && messageResults) {
-        score.parentNode.removeChild(score);
-        messageResults.parentNode.removeChild(messageResults);
-        if (playerCount === 5) {
-          para2.textContent = `You are the Winner!`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        } else if (computerCount === 5) {
-          para2.textContent = `You Lose! The Computer beat you`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        }
-      } else if (messageResults) {
-        messageResults.parentNode.removeChild(messageResults);
-      }
-    }
-
-    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `You Win! Scissors beats Paper`;
-    results.appendChild(para);
-    results.appendChild(para2);
-  } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-    computerCount++;
-    if (score || messageResults) {
-      if (score && messageResults) {
-        score.parentNode.removeChild(score);
-        messageResults.parentNode.removeChild(messageResults);
-        if (playerCount === 5) {
-          para2.textContent = `You are the Winner!`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        } else if (computerCount === 5) {
-          para2.textContent = `You Lose! The Computer beat you`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        }
-      } else if (messageResults) {
-        messageResults.parentNode.removeChild(messageResults);
-      }
-    }
-
-    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `You Lose! Rock beats Scissors`;
-    results.appendChild(para);
-    results.appendChild(para2);
-  } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-    computerCount++;
-    if (score || messageResults) {
-      if (score && messageResults) {
-        score.parentNode.removeChild(score);
-        messageResults.parentNode.removeChild(messageResults);
-        if (playerCount === 5) {
-          para2.textContent = `You are the Winner!`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        } else if (computerCount === 5) {
-          para2.textContent = `You Lose! The Computer beat you`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        }
-      } else if (messageResults) {
-        messageResults.parentNode.removeChild(messageResults);
-      }
-    }
-
-    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `You Lose! Paper beats Rock`;
-    results.appendChild(para);
-    results.appendChild(para2);
-  } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-    computerCount++;
-    if (score || messageResults) {
-      if (score && messageResults) {
-        score.parentNode.removeChild(score);
-        messageResults.parentNode.removeChild(messageResults);
-        if (playerCount === 5) {
-          para2.textContent = `You are the Winner!`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        } else if (computerCount === 5) {
-          para2.textContent = `You Lose! The Computer beat you`;
-          para2.style.fontSize = '2.5rem';
-          results.appendChild(para2);
-          playerCount = 0;
-          computerCount = 0;
-          return;
-        }
-      } else if (messageResults) {
-        messageResults.parentNode.removeChild(messageResults);
-      }
-    }
-
-    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `You Lose! Scissors beats Paper`;
-    results.appendChild(para);
-    results.appendChild(para2);
-  } else if (playerSelection === 'Rock' && computerSelection === 'Rock') {
-    if (score || messageResults) {
-      if (score && messageResults) {
-        score.parentNode.removeChild(score);
-        messageResults.parentNode.removeChild(messageResults);
-      } else if (messageResults) {
-        messageResults.parentNode.removeChild(messageResults);
-      }
-    }
-
-    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `It's a Tie!`;
-    results.appendChild(para);
-    results.appendChild(para2);
-  } else if (playerSelection === 'Paper' && computerSelection === 'Paper') {
-    if (score || messageResults) {
-      if (score && messageResults) {
-        score.parentNode.removeChild(score);
-        messageResults.parentNode.removeChild(messageResults);
-      } else if (messageResults) {
-        messageResults.parentNode.removeChild(messageResults);
-      }
-    }
-
-    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
-    para2.textContent = `It's a Tie!`;
+    para2.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
     results.appendChild(para);
     results.appendChild(para2);
   } else if (
-    playerSelection === 'Scissors' &&
-    computerSelection === 'Scissors'
+    (playerSelection === 'Scissors' && computerSelection === 'Rock') ||
+    (playerSelection === 'Rock' && computerSelection === 'Paper') ||
+    (playerSelection === 'Paper' && computerSelection === 'Scissors')
+  ) {
+    computerCount++;
+    if (score || messageResults) {
+      if (score && messageResults) {
+        score.parentNode.removeChild(score);
+        messageResults.parentNode.removeChild(messageResults);
+        if (playerCount === 5) {
+          para2.textContent = `You are the Winner!`;
+          para2.style.fontSize = '2.5rem';
+          results.appendChild(para2);
+          playerCount = 0;
+          computerCount = 0;
+          return;
+        } else if (computerCount === 5) {
+          para2.textContent = `You Lose! The Computer beat you`;
+          para2.style.fontSize = '2.5rem';
+          results.appendChild(para2);
+          playerCount = 0;
+          computerCount = 0;
+          return;
+        }
+      } else if (messageResults) {
+        messageResults.parentNode.removeChild(messageResults);
+      }
+    }
+
+    para.textContent = `Player 1: ${playerCount} Computer: ${computerCount}`;
+    para2.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
+    results.appendChild(para);
+    results.appendChild(para2);
+  } else if (
+    (playerSelection === 'Rock' && computerSelection === 'Rock') ||
+    (playerSelection === 'Paper' && computerSelection === 'Paper') ||
+    (playerSelection === 'Scissors' && computerSelection === 'Scissors')
   ) {
     if (score || messageResults) {
       if (score && messageResults) {
