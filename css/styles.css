@@ -26,6 +26,10 @@ h1 {
   text-align: center;
 }
 
+.span-red {
+  color: red;
+}
+
 .container {
   display: flex;
   justify-content: center;
